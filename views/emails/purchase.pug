@@ -1,0 +1,11 @@
+extends baseEmail
+
+block purchaseContent
+  p Hola,
+    p Gracias por tu compra !
+    p Pedido es el siguiente:
+    ul
+      each productInCart in productsInCart
+        li producto: #{productInCart.product.title} || valor: #{productInCart.product.price} || cantidad: #{productInCart.quantity}
+    p El precio total  es: #{totalPrice} 
+    p ¡Muchas gracias!.
